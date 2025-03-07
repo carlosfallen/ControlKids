@@ -11,3 +11,18 @@ export function formatTime(seconds: number): string {
 
   return parts.join(':');
 }
+
+// Função para formatar timestamps em hora local (HH:MM)
+export function formatTimestamp(timestamp: number): string {
+  return new Date(timestamp).toLocaleTimeString([], { 
+    hour: '2-digit', 
+    minute: '2-digit',
+    hour12: false
+  });
+}
+
+// Função para obter a hora de início formatada
+export function getFormattedStartTime(startTimestamp?: number): string {
+  if (!startTimestamp) return "--:--";
+  return formatTimestamp(startTimestamp);
+}

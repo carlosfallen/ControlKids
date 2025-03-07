@@ -2,8 +2,7 @@ import { useEffect } from 'react';
 import { Baby } from 'lucide-react';
 import { Header } from './components/Header';
 import { RegistrationCard } from './components/RegistrationCard';
-import { WatchList } from './components/WatchList';
-import { useStore } from './store';
+import { WatchList } from './components/WatchList'
 
 function App() {
   const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -22,7 +21,7 @@ function App() {
 
   return (
     <div className={`h-full bg-gray-50 transition-colors dark:bg-gray-900 ${isDark ? 'dark' : ''}`}>
-      <Header icon={Baby} title="Controle Infantil" />
+      <Header icon={Baby} title="Monitor Infantil" />
       <main className="container mx-auto max-w-lg px-4 pb-safe pt-20">
         <RegistrationCard />
         <WatchList />

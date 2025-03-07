@@ -1,8 +1,5 @@
-import React from 'react';
-import { DivideIcon as LucideIcon } from 'lucide-react';
-
 interface HeaderProps {
-  icon: LucideIcon;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   title: string;
 }
 

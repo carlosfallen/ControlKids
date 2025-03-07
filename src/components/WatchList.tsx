@@ -36,9 +36,9 @@ export function WatchList() {
           !notifiedTimers.current.has(child.id) &&
           !child.isRunning
         ) {
-          showNotification(`Tempo esgotado para ${child.name}!`, {
-            body: "É hora de encerrar a atividade.",
-            icon: '/icon.png',
+          showNotification(`${child.name}`, {
+            body: "Tempo Esgotado",
+            icon: '/clock.png',
           });
           notifiedTimers.current.add(child.id);
         }

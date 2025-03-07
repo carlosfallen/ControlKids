@@ -40,16 +40,14 @@ export function showNotification(title: string, options: ServiceWorkerNotificati
     if (navigator.serviceWorker.controller) {
       navigator.serviceWorker.ready.then(registration => {
         registration.showNotification(title, {
-          icon: '/icon.png',
+          icon: '/clock.png',
           vibrate: [200, 100, 200],
           ...options
         });
       });
     } else {
-      new Notification(title, {
-        ...options,
-        vibrate: undefined
-      });
+      const { vibrate, ...notificationOptions } = options;
+      new Notification(title, notificationOptions);
     }
   } else if (Notification.permission !== 'denied') {
     Notification.requestPermission().then(permission => {
